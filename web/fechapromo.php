@@ -1,6 +1,6 @@
 <?php
 
-$fech = $_POST["fecha"];
+$fech = date("Y-m-d");  //$_POST["fecha"];
 
 $conexion = new mysqli("localhost", "root", "", "servidoycomido");
 //$reg = $conexion->query("select * from promocion where fechaInicio>= $fech;");
@@ -21,6 +21,7 @@ echo '</tr>';
 while ($row = mysqli_fetch_row($sql)) {
 
     if ($row[5] <= getdate()) {
+        
         if ($row[3] >= $fech) {
           
             echo '<tr>';
