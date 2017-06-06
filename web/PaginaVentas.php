@@ -2,13 +2,14 @@
 session_start();
 $_SESSION['user'];
 if (isset($_SESSION['user'])) {
-    echo '<p><font size="4" face="font_family" >Bienvenido Sr. ' . $_SESSION['user'] . '</font></p>';
+   
 } else {
 
     header("location:login.php");
 }
 ?>
 <html lang="en" class=""><head>
+        <script src="../js/jquery-3.2.0.min.js"></script>
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -67,6 +68,7 @@ if (isset($_SESSION['user'])) {
         <!-- Site Wrapper -->
         <div id="site-wrapper">
             <!-- Header -->
+            <section>
             <header id="site-header">
 
                 <div class="navbar is-sticky" role="navigation">
@@ -83,15 +85,17 @@ if (isset($_SESSION['user'])) {
                             </button>
                             <ul class="nav navbar-nav navbar-collapse collapse">
                                 <li><a href="ventas.php">Ventas</a></li>
+                                <li><a href="listarVenta.php">Listar Venta</a></li>
                                 <li><a href="Home.php">salir</a></li>
-                               
                             </ul>
                         </div>
                     </div>
                 </div>
             </header>
         </section>
+           
     </div>
+        
 
 
 </body>

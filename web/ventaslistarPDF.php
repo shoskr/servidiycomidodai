@@ -1,13 +1,13 @@
 <?php
 
-if (isset($_POST["txtRegistro"])) {
+if (isset($_POST["txtVent"])) {
 
+    echo 'asas';
     $conexion = new mysqli("localhost", "root", "", "servidoycomido");
 
+    $accionV = $_POST["txtVent"];
 
-    $archi = $_POST["txtRegistro"];
-
-    if ($archi == "Listar") {
+    if ($accionV == "Listar") {
 
         $inicio = $_POST["FechaIni"];
         $final = $_POST["FechaTer"];
@@ -20,13 +20,14 @@ if (isset($_POST["txtRegistro"])) {
 
         echo '<table class="table table-bordered">';
         echo '<tr>';
-        $archivo = fopen("ventas.csv", "w");
-        fwrite($archivo, "Folio;Fecha Venta; Total;Rut Empleado \n");
         echo '<td>Folio</td>';
         echo '<td>Fecha Venta</td>';
         echo '<td>Total</td>';
         echo '<td>Rut Empleado</td>';
         echo '</tr>';
+        $archivo = fopen("ventas.csv", "w");      
+        
+        $acum = 0;
         while ($row = mysqli_fetch_array($resp)) {
             echo '<tr>';
             fwrite($archivo, $row[0] . ";" . $row[1] . ";" . $row[2] . ";" . $row[3] . "\n");
@@ -35,17 +36,19 @@ if (isset($_POST["txtRegistro"])) {
             echo '<td>' . $row[2] . '</td>';
             echo '<td>' . $row[3] . '</td>';
             echo '</tr>';
+            
+            $acum = $acum+$row[2];
         }
+        echo '<tr>';
+        echo '<td></td>';
+        echo '<td>Total De ventas :</td>';
+        echo '<td> $' . $acum . '</td>';
+        echo '<td></td>';
+        echo '<tr>';
         echo '</table>';
         fclose($archivo);
         echo '<a href="PDFVentas.php">Vista PDF</a>';
     }
     return;
 }
-    
-
-
-   
-        
-        
         
