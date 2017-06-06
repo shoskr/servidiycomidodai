@@ -61,10 +61,9 @@ CREATE DEFINER=`root`@`localhost` PROCEDURE `HACERHORARIO`(IN EMP VARCHAR(12),
                               IN DIA VARCHAR(200),   
                               IN INICIO DATE, 
                               IN FIN DATE, 
-                              IN TURNO VARCHAR(45),
-                              IN LOCAL INT)
+                              IN TURNO VARCHAR(45))
 BEGIN
-    INSERT INTO horario VALUES(NULL , EMP, DIA, INICIO , FIN , TURNO , LOCAL);
+    INSERT INTO horario VALUES(NULL , EMP, DIA, INICIO , FIN , TURNO);
 END$$
 
 DROP PROCEDURE IF EXISTS `HEX`$$
