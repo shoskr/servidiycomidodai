@@ -114,6 +114,8 @@ if (isset($_POST["txtAccion"])) {
             echo '</tr>';
         }
         echo '</table>';
+        
+        echo '<a href="pdfLiqu.php?id='. $rutli.' ">ver pdf</a>';
 //redirecciona a la page del pdf
     }
     return;

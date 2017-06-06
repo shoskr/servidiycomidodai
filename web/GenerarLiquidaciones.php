@@ -47,7 +47,8 @@
                                         <td>
                                             <select name="cboEmp">
                                                 <?php
-                                                $sql = $conexion->query("select * from empleado where ;");
+                                                 
+                                                $sql = $conexion->query("select * from empleado;");
 
                                                 while ($row = mysqli_fetch_array($sql)) {
                                                    if($row[8]== 1){
@@ -120,6 +121,7 @@
                         <div id="respuesta">
 
                         </div>
+                        
                     </div>
                 </div>
             </div>
