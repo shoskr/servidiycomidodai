@@ -32,7 +32,7 @@
 
                                 <td>Fecha Inicio:</td>
                                 <td>
-                                    <input type="date" id="fecha" name="fecha" >
+                                    <input type="date" id="fecha" name="fechaIn" >
 
 
                                 </td>
@@ -41,7 +41,7 @@
 
                                 <td>Fecha Termino:</td>
                                 <td>
-                                    <input type="date" id="fecha" name="fecha" >
+                                    <input type="date" id="fecha" name="FechaTermino" >
 
 
                                 </td>

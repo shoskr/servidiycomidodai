@@ -81,7 +81,7 @@
                                         session_start();
                                         $_SESSION['user'];
                                         if (isset($_SESSION['user'])) {
-                                            echo '<p><font size="4" face="font_family" > Usuario ' . $_SESSION['user'] . '</font></p>';
+                                            echo '<p><font size="4" face="font_family" color="red" > Usuario ' . $_SESSION['user'] . '</font></p>';
                                         } else {
 
                                             header("location:login.php");

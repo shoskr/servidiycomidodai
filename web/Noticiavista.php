@@ -8,7 +8,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <?php include_once './index.php ';?>
+        <?php include_once './PaginaAdministrador.php';?>
     </head>
     <body>
         <div class="row content">

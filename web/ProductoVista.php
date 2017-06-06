@@ -10,7 +10,7 @@ and open the template in the editor.
         <title></title>
         
     <body style="background-image: url(../img/Fondo_Negro.jpg)">
-         <?php include_once './index.php ';?>
+         <?php include_once './PaginaAdministrador.php';?>
     </head>
         <div class="row content">
 

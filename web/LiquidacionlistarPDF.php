@@ -112,10 +112,12 @@ if (isset($_POST["txtAccion"])) {
             echo '<td></td>';
             echo '<td>' . $row[11] . '</td>';
             echo '</tr>';
+             break;
         }
         echo '</table>';
         
         echo '<a href="pdfLiqu.php?id='. $rutli.' ">ver pdf</a>';
+       
 //redirecciona a la page del pdf
     }
     return;

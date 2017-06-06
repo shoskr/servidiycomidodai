@@ -77,12 +77,13 @@
                             <ul class="nav navbar-nav navbar-collapse collapse">
                                 <li><a href="ventas.php">Ventas</a></li>
                                 <li><a href="listarVenta.php">Listar Venta</a></li>
+                                <li><a href="Devolucion.php">Devolucion</a></li>
                                 <li><a href="Home.php">salir</a></li>
                                 <li><a><?php
                                         session_start();
                                         $_SESSION['user'];
                                         if (isset($_SESSION['user'])) {
-                                            echo '<p><font size="4" face="font_family" > Usuario ' . $_SESSION['user'] . '</font></p>';
+                                            echo '<p><font size="4" face="font_family" color="red" > Usuario ' . $_SESSION['user'] . '</font></p>';
                                         } else {
 
                                             header("location:login.php");

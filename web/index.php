@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<!--
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
--->
+<?php
+session_start();
+session_destroy();
+?>
 <html lang="en" class=""><head>
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -79,7 +77,7 @@ and open the template in the editor.
                             </button>
                             <ul class="nav navbar-nav navbar-collapse collapse">
                                 <li><a class="active" href="Home.php">Home</a></li>
-                                <li><a class="" href="Promocion.php">Promociones</a></li>
+                                <li><a class="" href="VistaFechaPromocion.php">Promociones</a></li>
                                 <li><a class="" href="productos.php">Productos</a></li>	
                                 <li><a class="" href="noticia.php">Noticias</a></li>
                                 <li><a class="" href="login.php">Login</a></li>

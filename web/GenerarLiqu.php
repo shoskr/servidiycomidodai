@@ -15,17 +15,11 @@ if (isset($_POST["txtAccion"])) {
         $lic = $_POST["txtLicencias"];
         $Bono = $_POST["txtBonos"];
         $agisnaldo = $_POST["txtAgisnaldo"];
-        $que = $conexion->query("select * from liquidacion WHERE `EMPLEADO_rut` = '$rut' AND periodo = '$periodo'");
+        $que = $conexion->query("select * from liquidacion");
+        $per =0;
+        
 
-        while ($row = mysqli_fetch_array($que)) {
-            if ($periodo == $row[1]) {
-                $per = "existe";
-            } else {
-                $per = "no";
-            }
-        }
-
-
+     
 //dias trabajados
         $dtrab = (30 - $ausencias - $lic);
 

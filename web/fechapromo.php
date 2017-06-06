@@ -20,17 +20,17 @@ echo '</tr>';
 
 while ($row = mysqli_fetch_row($sql)) {
 
-    if ($row[3] <= getdate()) {
-        if ($row[4] >= $fech) {
+    if ($row[5] <= getdate()) {
+        if ($row[3] >= $fech) {
           
             echo '<tr>';
             echo '<td>', $fech .'</td>';
             echo '<td>', $row[0] .'</td>';
-            echo '<td>', $row[1] .'</td>';
             echo '<td>', $row[2] .'</td>';
+            echo '<td>', $row[1] .'</td>';
+            echo '<td>', $row[5] .'</td>';
             echo '<td>', $row[3] .'</td>';
-            echo '<td>', $row[4] .'</td>';
-            $f=$row[5];
+            $f=$row[4];
            echo'<td>','<img src="../imgPromocion/'.$f.'"width="200" height="200">'.'</td>';
             echo '</tr>';
              

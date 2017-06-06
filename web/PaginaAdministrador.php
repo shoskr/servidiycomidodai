@@ -62,21 +62,21 @@
                 <div class="navbar is-sticky" role="navigation">
                     <div class="container">
                         <div class="row">
-                            <h1 class="sr-only">Food Lover</h1>
-                            <a href="index.php" title="FoodLover" class="logo">
-                                <img src="../Baners/Icono2.png">
-                            </a>
+                            
                             <button data-target=".navbar-collapse" data-toggle="collapse" type="button" class="menu-mobile visible-xs">
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                                 <span class="icon-bar"></span>
                             </button>
                             <ul class="nav navbar-nav navbar-collapse collapse">
+                                
+                                <li style="text-align: initial"><a><img src="../Baners/Icono2.png" width="60%" ></a></li>
                                 <li><a href="IngresarUsuario.php">Ingresar Usuarios</a></li>
                                 <li><a href="IngresarAsistencias.php">Asistencia</a></li>
                                 <li><a href="IngresarHorarios.php"> Horarios</a></li>
                                 <li><a href="Producto.php">Producto</a></li>
                                 <li><a href="Promocion.php">Promocion</a></li>
+                                <li><a href="Noticiavista.php">Noticias</a></li>
                                  <li><a href="Home.php">salir</a></li>
                                  
                                   <li><a><?php

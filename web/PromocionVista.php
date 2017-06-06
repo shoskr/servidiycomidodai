@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title></title>
-        <?php include_once './index.php ';?>
+        <?php include_once './PaginaAdministrador.php';?>
     </head>
     <body style="background-image: url(../img/Fondo_Negro.jpg)">
 
@@ -31,15 +31,15 @@
                                     <div class="panel panel-default" style="background-color: #b2dba1"
                                          <div class="thumbnail" style="background-color: #000\9;border: 0">
                                             <h4>
-                                                <?php echo $row[4]; ?>--<?php echo $row[3]; ?>
+                                                <?php echo $row[5]; ?>--<?php echo $row[3]; ?>
                                             </h4>
                                             <a>
-                                                <img src="../imgPromocion/<?php echo $row[5]; ?>" style=" ">  
+                                                <img src="../imgPromocion/<?php echo $row[4]; ?>" style=" ">  
                                             </a>
                                             <div class="caption">
                                                 <a> <?php echo $row[0]; ?></a>
-                                                <a> <?php echo $row[1]; ?></a><br>
-                                                <a> <?php echo $row[2]; ?></a>
+                                                <a> <?php echo $row[2]; ?></a><br>
+                                                <a> <?php echo $row[1]; ?></a>
                                                 <a>
                                                     <input type="hidden" name="txtId" value="<?php echo $row[0]; ?>">
 

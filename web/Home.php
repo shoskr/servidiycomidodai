@@ -1,3 +1,7 @@
+<?php
+session_start();
+session_destroy();
+?>
 <html lang="en" class="">
     <head>
 
@@ -93,9 +97,9 @@
                             </button>
                             <ul class="nav navbar-nav navbar-collapse collapse">
                                 <li><a class="active" href="index.php">Home</a></li>
-                                <li><a class="" href="PromocionVista.php">Promociones</a></li>
-                                <li><a class="" href="ProductoVista.php">Productos</a></li>	
-                                <li><a class="" href="Noticiavista.php">Noticias</a></li>
+                                <li><a class="" href="VistaFechaPromocion.php">Promociones</a></li>
+                                <li><a class="" href="productos.php">Productos</a></li>	
+                                <li><a class="" href="noticia.php">Noticias</a></li>
                                 <li><a class="" href="login.php">Login</a></li>
                             </ul>
                         </div>
@@ -145,21 +149,6 @@
 
                 </div>
 
-            </div>
-            <div  class="section-slogan hidden-xs" style="margin: 200px 10px 10px 30px ;text-align: center">
-                <a href="#" id="Producto">Python</a>
-                <a href="#" id="Promocion">Django</a>
-                <a href="#" id="Noticia">Jython</a>
-                <br>
-                <div  class="section-slogan hidden-xs" style="margin: 200px 10px 10px 30px ;text-align: center">
-                    <table border="1" >
-                        <tr>
-
-                            <td id ="contenido">
-                            </td>
-                        </tr>
-                    </table>
-                </div>
             </div>
         </div>
 
