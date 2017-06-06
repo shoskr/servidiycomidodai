@@ -79,7 +79,7 @@ and open the template in the editor.
                             </button>
                             <ul class="nav navbar-nav navbar-collapse collapse">
                                 <li><a class="active" href="Home.php">Home</a></li>
-                                <li><a class="" href="VistaFechaPromocion.php">Promociones</a></li>
+                                <li><a class="" href="Promocion.php">Promociones</a></li>
                                 <li><a class="" href="productos.php">Productos</a></li>	
                                 <li><a class="" href="noticia.php">Noticias</a></li>
                                 <li><a class="" href="login.php">Login</a></li>

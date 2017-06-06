@@ -29,7 +29,7 @@ if (isset($_POST["txtRegistro"])) {
 
 
         echo "<div>";
-        echo '<table class="table table-bordered" style="background-color: white">';
+        echo '<table class="table" style="background-color: white">';
         echo "<tr>";
         echo "<td> Producto <td>";
         echo "<td> cantidad <td>";
@@ -84,7 +84,7 @@ if (isset($_POST["txtRegistro"])) {
 
 
             echo "<div>";
-            echo '<table class="table table-bordered" style="background-color: white">';
+            echo '<table class="table " style="background-color: white">';
             echo "<tr>";
             echo "<td> Producto </td>";
             echo "<td> cantidad </td>";
@@ -109,12 +109,23 @@ if (isset($_POST["txtRegistro"])) {
     
     
     if ($reg == "Comprar") {
+        
+        $entre =$_POST["cboEnt"];
+        $emp =$_POST["cboEmp"];
+        
         $total;
-        $sql2 = $conexion->query("select * from venta;");
-            while ($file = mysqli_fetch_array($sql2)) {
+        $venta;
+         $sql1 = $conexion->query("select * from venta ;");
+            while ($file = mysqli_fetch_array($sql1)) {
                 $total=$file[2];
+                $venta = $file[0];
             }
-            echo '<p> Total a Pagar =$'.$total;
+            
+            $ent = $conexion->query("insert into entrega values(null,'$entre', '$emp', $venta );");
+            
+            
+           
+            echo '<p><b style="text-align: center"> Su Total a Pagar es = $'.$total.'</b></p>' ;
             
     }
     return;

@@ -1,13 +1,3 @@
-<?php
-session_start();
-$_SESSION['user'];
-if (isset($_SESSION['user'])) {
-    echo '<p><font size="4" face="font_family" >Bienvenido Sr. ' . $_SESSION['user'] . '</font></p>';
-} else {
-
-    header("location:login.php");
-}
-?>
 <html lang="en" class=""><head>
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
@@ -86,6 +76,19 @@ if (isset($_SESSION['user'])) {
                                 <li><a href="ModificarEmpleado.php">Modificar Empleado</a></li>
                                 <li><a href="GenerarLiquidaciones.php">Liquidaciones</a></li>
                                  <li><a href="Home.php">salir</a></li>
+                                 
+                                 <li><a><?php
+                                        session_start();
+                                        $_SESSION['user'];
+                                        if (isset($_SESSION['user'])) {
+                                            echo '<p><font size="4" face="font_family" > Usuario ' . $_SESSION['user'] . '</font></p>';
+                                        } else {
+
+                                            header("location:login.php");
+                                        }
+                                        ?>
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>

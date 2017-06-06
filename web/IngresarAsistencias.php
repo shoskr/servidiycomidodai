@@ -99,11 +99,13 @@
                                             $sql = $conexion->query("select * from empleado order by nombre;");
 
                                             while ($row = mysqli_fetch_array($sql)) {
-                                                ?>
-                                                <option value="<?php echo $row[0]; ?>"><?php echo $row[1] . " " . $row[2] ?></option>
-                                                <?php
+                                                if ($row[8] == 1) {
+                                                    ?>
+                                                    <option value="<?php echo $row[0]; ?>"><?php echo $row[1] . " " . $row[2] ?></option>
+                                                    <?php
+                                                }
                                             }
-                                            ?>
+                                            ?>    
                                         </select>
                                     </td> 
 
@@ -115,7 +117,7 @@
                                     <td>
                                         <input type="button" value="ENTRADA"id="btnEntrada">
                                     </td>
-                                 
+
                                     <td>
                                         <input type="button" value="SALIDA" id="btnSalida" >
                                     </td>

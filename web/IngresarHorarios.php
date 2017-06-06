@@ -13,7 +13,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <form method="post" action="GuardarHorarios.php">
-                            <table>
+                            <table class="table">
                                 <tr>
                                     <td colspan="2" class="text-center">Asignacion de Horarios</td>
                                 </tr>
@@ -67,20 +67,6 @@
                                     </td> 
                                 </tr>
                                 <tr>
-                                    <td>Local :</td>
-
-                                    <td>
-                                        <select name="cboLocal">
-                                            <?php
-                                            $sql = $conexion->query("select * from local;");
-
-                                            while ($row = mysqli_fetch_array($sql)) {
-                                                ?>
-                                                <option value="<?php echo $row[0]; ?>"><?php echo $row[1]; ?></option>
-
-                                            <?php } ?>
-                                        </select>
-                                    </td>
                                 </tr>
                                 <tr> 
                                     <td><input type="submit" value="Guardar"> </td> 

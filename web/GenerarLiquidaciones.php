@@ -45,14 +45,16 @@
                                     <tr>
                                         <td>Trabajador</td>
                                         <td>
-                                            <select name="cboEmp" onselect="rut()">
+                                            <select name="cboEmp">
                                                 <?php
-                                                $sql = $conexion->query("select * from empleado;");
+                                                $sql = $conexion->query("select * from empleado where ;");
 
                                                 while ($row = mysqli_fetch_array($sql)) {
+                                                   if($row[8]== 1){
                                                     ?>
                                                     <option value="<?php echo $row[0]; ?>"><?php echo $row[1] . " " . $row[2] ?></option>
                                                     <?php
+                                                   }
                                                 }
                                                 ?>                                                
                                             </select>

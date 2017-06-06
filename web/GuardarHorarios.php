@@ -6,14 +6,13 @@ $arreglo_dias = $_POST["Dia"];
 $inicio = $_POST["FechaInicio"];
 $fin = $_POST["FechaTermino"];
 $Turno = $_POST["Turno"];
-$local =$_POST["cboLocal"];
 $dias ="";
 
 foreach ($arreglo_dias as $key => $value) {
     $dias = $dias . $value .", ";    
 }
 
-$sql = "call HACERHORARIO('$rut', '$dias', '$inicio', '$fin', '$Turno', $local);";
+$sql = "call HACERHORARIO('$rut', '$dias', '$inicio', '$fin', '$Turno');";
 
 $resp = $conexion->query($sql);
 

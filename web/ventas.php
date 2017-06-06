@@ -54,7 +54,7 @@
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <form id="formu">
-                            <table class="tab-content">
+                            <table class="table">
                                 <tr>
                                     <td>Agregar Venta</td>    
                                 </tr>
@@ -73,10 +73,37 @@
                                             }
                                             ?>
                                         </select>
-
+                                    
                                     </td>
                                     <td>Cantidad</td>
                                     <td><input type="number" min="1" value="1" name="txtCantidad"></td>
+                                </tr>
+                                
+                                <tr>
+                                    <td>Tipo de entraga</td>
+                                    <td>
+                                        <select name="cboEnt">
+                                            <option value="Mesa">Mesa</option>
+                                            <option value="Barra">Barra</option>
+                                        </select>
+                                    </td>
+                                    
+                                    <td>Entregado por </td>
+                                    <td>
+                                        <select name="cboEmp" >
+                                                <?php
+                                                $sql = $conexion->query("select * from empleado where CARGO_idCargo = 4;");
+
+                                                while ($row = mysqli_fetch_array($sql)) {
+                                                   if($row[8]== 1){
+                                                    ?>
+                                                    <option value="<?php echo $row[0]; ?>"><?php echo $row[1] . " " . $row[2] ?></option>
+                                                    <?php
+                                                   }
+                                                }
+                                                ?>                                                
+                                            </select>
+                                    </td>
                                 </tr>
                                 <tr>
 
