@@ -16,10 +16,10 @@ if (isset($_POST["txtAccion"])) {
         $Bono = $_POST["txtBonos"];
         $agisnaldo = $_POST["txtAgisnaldo"];
         $que = $conexion->query("select * from liquidacion");
-        $per =0;
-        
+        $per = 0;
 
-     
+
+
 //dias trabajados
         $dtrab = (30 - $ausencias - $lic);
 
@@ -85,17 +85,31 @@ if (isset($_POST["txtAccion"])) {
 //liquido
         $liq = $haber - ($salud + $cesantia + $Tafp);
 
-        $query = "CALL LIQUIDACION ('$periodo', $dtrab, $the, $Bono, $agisnaldo, $salud, $Tafp,$cesantia, '$rut', $grat, $liq, $sb,$ch, $haber);";
+        $con = new mysqli("localhost", "root", "", "servidoycomido");
 
-        $res = $conexion->query($query);
+        $qy = "select * from liquidacion;";
 
-        $res;
-
-        if ($res > 0) {
-            echo '<p>Liquidacion Generada</p>';
-        } else {
-            echo '<p>Liquidacion no Generada';
+        $r = $con->query($qy);
+        $res = '1';
+        while ($row2 = mysqli_fetch_array($r)) {
+            if ($row2[9] == $rut) {
+                if ($row2[1] == $periodo) {
+                    $res = '1';
+                }
+            }
         }
+        
+        echo $res;
+      //  $query = "CALL LIQUIDACION ('$periodo', $dtrab, $the, $Bono, $agisnaldo, $salud, $Tafp,$cesantia, '$rut', $grat, $liq, $sb,$ch, $haber);";
+
+        //$res = $con->query($query);
+
+
+       // if ($res > 0) {
+         //   echo '<p>Liquidacion Generada</p>';
+        //} else {
+          //  echo '<p>Liquidacion no Generada';
+        //}
 
         return;
     }

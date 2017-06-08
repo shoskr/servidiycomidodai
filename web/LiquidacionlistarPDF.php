@@ -10,16 +10,15 @@ if (isset($_POST["txtAccion"])) {
 
 
         $rutli = $_POST["cboEmp"];
+        $per = $_POST["cboPeriodo"];
 
-        $sql = "select * from liquidacion where EMPLEADO_rut='$rutli';";
 
-        $resp = $conexion->query($sql);
 
         $sql1 = "select * from empleado where rut='$rutli';";
         $resp1 = $conexion->query($sql1);
 
 
-       
+
         echo '<table class="table ">';
         echo '<tr>';
         echo '<td colspan="4">Liquidacion de sueldo</td>';
@@ -35,6 +34,12 @@ if (isset($_POST["txtAccion"])) {
             echo '<td>' . $row[0] . '</td>';
             echo '</tr>';
         }
+
+        $sql = "select * from liquidacion where EMPLEADO_rut='$rutli' and periodo = '$per' ;";
+
+        $resp = $conexion->query($sql);
+
+
         while ($row = mysqli_fetch_array($resp)) {
             echo '<tr>';
             echo '<td>Periodo</td>';
@@ -112,12 +117,13 @@ if (isset($_POST["txtAccion"])) {
             echo '<td></td>';
             echo '<td>' . $row[11] . '</td>';
             echo '</tr>';
-             break;
+            break;
         }
         echo '</table>';
-        
-        echo '<a href="pdfLiqu.php?id='. $rutli.' ">ver pdf</a>';
-       
+
+        echo '<a href="pdfLiqu.php?id=' . $rutli . ' ">ver pdf</a>';
+
+
 //redirecciona a la page del pdf
     }
     return;

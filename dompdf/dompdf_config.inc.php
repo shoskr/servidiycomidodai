@@ -70,7 +70,7 @@ define("DOMPDF_FONT_DIR", DOMPDF_DIR . "/lib/fonts/");
  * This directory must be writeable by the webserver process.
  * It is used to download remote images.
  */
-define("DOMPDF_TEMP_DIR", "/tmp");
+define("DOMPDF_TEMP_DIR", "/tmp"); 
 
 /**
  * ==== IMPORTANT ====
@@ -193,7 +193,7 @@ define("DOMPDF_ENABLE_PHP", false);
  *
  * @var bool 
  */
-define("DOMPDF_ENABLE_REMOTE", true);
+define("DOMPDF_ENABLE_REMOTE", true); 
  
 /**
  * DOMPDF autoload function

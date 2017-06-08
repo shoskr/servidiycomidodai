@@ -51,6 +51,7 @@
 
 html { 
   display: -dompdf-page;
+  margin: 0;
 }
 
 /* blocks */
@@ -62,7 +63,9 @@ div, map, dt, isindex {
 body {
   page-break-before: avoid;
   display: block;
-  margin: 8px;
+  margin: 20mm 20mm 20mm 20mm;
+  font-family: "Times New Roman", serif;
+  
 }
 
 p, dl, multicol {
