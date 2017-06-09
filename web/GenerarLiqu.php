@@ -55,8 +55,13 @@ if (isset($_POST["txtAccion"])) {
         while ($row1 = mysqli_fetch_row($hrs)) {
             $he = $row1[0];
         }
-        $ch = ($he - 28800) / 3600;
-
+        
+        
+        if($he < 0 || $he > 0 ){
+             $ch = ($he - 28800) / 3600;
+        }else{
+        $ch =0;
+    }
 
         if ($ch < 0) {
             $the = round((($ss / 30) * 7) / 45);
@@ -90,7 +95,7 @@ if (isset($_POST["txtAccion"])) {
         $qy = "select * from liquidacion;";
 
         $r = $con->query($qy);
-        $res = '1';
+        $res = '0';
         while ($row2 = mysqli_fetch_array($r)) {
             if ($row2[9] == $rut) {
                 if ($row2[1] == $periodo) {
@@ -98,18 +103,21 @@ if (isset($_POST["txtAccion"])) {
                 }
             }
         }
-        
-        echo $res;
-      //  $query = "CALL LIQUIDACION ('$periodo', $dtrab, $the, $Bono, $agisnaldo, $salud, $Tafp,$cesantia, '$rut', $grat, $liq, $sb,$ch, $haber);";
 
-        //$res = $con->query($query);
+        if ($res == '0') {
+            $query = "CALL LIQUIDACION ('$periodo', $dtrab, $the, $Bono, $agisnaldo, $salud, $Tafp,$cesantia, '$rut', $grat, $liq, $sb,$ch, $haber);";
+
+            $res1 = $con->query($query);
 
 
-       // if ($res > 0) {
-         //   echo '<p>Liquidacion Generada</p>';
-        //} else {
-          //  echo '<p>Liquidacion no Generada';
-        //}
+            if ($res1 > 0) {
+                echo '<p>Liquidacion Generada</p>';
+            } else {
+                echo '<p>Liquidacion no Generada';
+            }
+        }else{
+            Echo 'Liquidacion ya Generada en este periodo';
+        }
 
         return;
     }

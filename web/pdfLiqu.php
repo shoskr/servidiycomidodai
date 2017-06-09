@@ -164,7 +164,7 @@ $conexion = new mysqli("localhost", "root", "", "servidoycomido");
 <?php
 require_once '../dompdf/dompdf_config.inc.php';
 $dompdf = new DOMPDF();
-$dompdf->load_html(ob_get_clean());
+$dompdf->load_html(utf8_decode(ob_get_clean()));
 $dompdf->render();
 $dompdf->set_paper('A5', 'portrait');
 $pdf = $dompdf->output();

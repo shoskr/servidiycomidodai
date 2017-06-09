@@ -26,8 +26,10 @@ if (isset($_POST["txtRegistro"])) {
             echo '<p> Entrada</p>';
             echo '<p>' . date("g:i A") . '</p>';
             echo '<p>ID = ' . $rut . '</p>';
+            echo '<a href="ValeColacion.php?id=' . $rut . ' ">Vale Colacion</a>';
         } else {
             echo '<p> no entras</p>';
+            
         }
     }
 
