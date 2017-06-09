@@ -1,4 +1,8 @@
-
+<?php
+if(isset($_GET["mensaje"])){
+     echo "<script>alert(".$_GET["mensaje"].");</script>";    
+}
+?>
 <html>
     <head>
         <meta charset="UTF-8">

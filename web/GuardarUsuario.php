@@ -13,8 +13,7 @@ $resp = $conexion->query($sql);
 echo $resp;
 
 if($resp>0){
-    header("location:IngresarUsuario.php");
+    header("location:IngresarUsuario.php?mensaje='Usuario Guardado'");
 }else{
-    echo $resp;
-    echo "no grabo";
+    header("location:IngresarUsuario.php?mensaje='Usuario No Guardado'");
 }

@@ -1,6 +1,10 @@
 <?php
 session_start();
 session_destroy();
+if(isset($_GET["mensaje"])){
+     echo "<script>alert(".$_GET["mensaje"].");</script>";    
+}
+
 ?>
 <html>
     <head>

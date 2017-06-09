@@ -1,3 +1,9 @@
+<?php
+if(isset($_GET["mensaje"])){
+     echo "<script>alert(".$_GET["mensaje"].");</script>";    
+}
+
+?>
 <html lang="en" class=""><head>
         <meta charset="utf-8">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>

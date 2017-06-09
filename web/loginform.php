@@ -6,6 +6,7 @@ $usu = $_POST['txtUsuario'];
 $pass = $_POST['txtPass'];
 
 
+
 $tipo;
 $emp;
 
@@ -37,25 +38,24 @@ if ($resp->num_rows > 0) {
                 session_start();
                 $_SESSION['user'] = $nomre;
                 $_SESSION['user1'] = $emp;
-                header("location:PaginaAdministrador.php");
+                header("location:PaginaAdministrador.php?mensaje='Bienvenido $nomre'");
                 break;
             case 2:
                 session_start();
                 $_SESSION['user'] = $nomre;
                 $_SESSION['user1'] = $emp;
-                header("location:PaginaVentas.php");
+                header("location:PaginaVentas.php?mensaje='Bienvenido $nomre'");
                 break;
             case 5:
                 session_start();
                 $_SESSION['user'] = $nomre;
                 $_SESSION['user1'] = $emp;
-                header("location:PaginaContador.php");
+                header("location:PaginaContador.php?mensaje='Bienvenido $nomre'");
                 break;
         }
-    } else {
-        echo "sin acceso";
     }
 } else {
-    echo 'contraseña o clave incorrecta';
+
+    header("location:login.php?mensaje='contraseña o clave incorrecta'");
 }
  
