@@ -19,3 +19,5 @@ if (copy($archivo,"../imgNoticias/".$nom)) {
     echo "no se puede cargar la foto";
 }
 
+
+//modificacion 
